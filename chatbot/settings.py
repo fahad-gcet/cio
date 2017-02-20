@@ -32,11 +32,17 @@ INSTALLED_APPS = (
 
 CHATTERBOT = {
     'name': 'ChatBot',
+    'logic_adapters': [
+        'chatterbot.logic.MathematicalEvaluation',
+        'chatterbot.logic.TimeLogicAdapter',
+        'chatterbot.logic.BestMatch'
+    ],
     'trainer': 'chatterbot.trainers.ChatterBotCorpusTrainer',
     'training_data': [
-        'chatterbot.corpus.english.greetings'
+        'chatterbot.corpus.english.conversations',
     ]
 }
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
