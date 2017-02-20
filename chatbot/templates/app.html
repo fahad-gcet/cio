@@ -86,8 +86,7 @@
         });
 
         $submit.done(function(statement) {
-            statement1 = statement.text
-            createRow(statement1);
+            createRow(statement['text']);
 
             // Clear the input field
             $input.val('');
