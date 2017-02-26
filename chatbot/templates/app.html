@@ -86,7 +86,9 @@
         });
 
         $submit.done(function(statement) {
-            createRow(statement.text);
+             var mystmt = statement.text;
+             var n = mystmt.indexOf("created_at");
+            createRow(mystmt.substring(11, n-4));
 
             // Clear the input field
             $input.val('');
